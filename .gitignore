@@ -1,0 +1,16 @@
+# API keys
+.env
+
+# Node
+node_modules/
+dist/
+
+# TypeScript build output
+*.js.map
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
