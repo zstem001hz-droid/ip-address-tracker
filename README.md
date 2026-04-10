@@ -66,6 +66,10 @@ Users should be able to:
 
 - [LeafletJS Documentation](https://leafletjs.com/reference.html)
 - [IPify API Documentation](https://geo.ipify.org/docs)
+- [MDN - Flexbox](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox)
+- [MDN - CSS references](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+- [MDN - calc()](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/calc)
+- [MDN - Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using)
 - [MDN — Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [MDN — Async/Await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises)
 
