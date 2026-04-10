@@ -88,17 +88,35 @@ async function fetchIPData(ipAddress = "") {
 }
 
 // Event listener
-searchForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const query = searchInput.value.trim();
+searchForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const query = searchInput.value.trim();
 
-    if(!query) {
-        searchInput.focus();
-        return;
-    }
+  if (!query) {
+    searchInput.focus();
+    return;
+  }
 
-console.log('=== SEARCH SUBMISSION ===');
-console.log('Query:', query);
+  console.log("=== SEARCH SUBMISSION ===");
+  console.log("Query:", query);
 
-fetchIPData(query);
+  fetchIPData(query);
 });
+
+// INITIAL PAGE LOAD & USER IP DETECTED //
+async function initApp() {
+  try {
+    const ipResponse = await fetch("https://api.ipify.org?format=json");
+    const { ip } = await ipResponse.json();
+
+    console.log("=== USER IP ADDRESS DETECTED ===");
+    console.log("User IP:", ip);
+
+    fetchIPData(ip);
+  } catch (error) {
+    console.error("could not detect IP:", error.message);
+    fetchIPData();
+  }
+}
+
+initApp();
