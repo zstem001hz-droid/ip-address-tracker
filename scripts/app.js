@@ -78,7 +78,7 @@ async function fetchIPData(ipAddress = "") {
 
     const data = await response.json();
 
-    console.log("=== API RESPONSE ===");
+    console.log("=== RENDER API RESPONSE ===");
 
     updateUI(data);
   } catch (error) {
@@ -87,3 +87,18 @@ async function fetchIPData(ipAddress = "") {
   }
 }
 
+// Event listener
+searchForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const query = searchInput.value.trim();
+
+    if(!query) {
+        searchInput.focus();
+        return;
+    }
+
+console.log('=== SEARCH SUBMISSION ===');
+console.log('Query:', query);
+
+fetchIPData(query);
+});
