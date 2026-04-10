@@ -108,6 +108,7 @@ button[type="submit"]:hover {
   text-transform: uppercase;
   color: hsl(0, 0%, 59%);
   margin-bottom: 0.4rem;
+  white-space: nowrap;
 }
 
 .info-item p:last-child {
