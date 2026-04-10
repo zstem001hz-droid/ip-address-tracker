@@ -10,13 +10,13 @@ const displayTimezone = document.getElementById("display-timezone");
 const displayISP = document.getElementById("display-isp");
 
 // Console.log check - DOM elements //
-console.log("=== DOM REFERENCE CHECKS ===");
-console.log("Search form:", searchForm);
-console.log("Search input:", searchInput);
-console.log("Display IP:", displayIP);
-console.log("Display Location:", displayLocation);
-console.log("Display Timezone:", displayTimezone);
-console.log("Display ISP:", displayISP);
+// console.log("=== DOM REFERENCE CHECKS ===");
+// console.log("Search form:", searchForm);
+// console.log("Search input:", searchInput);
+// console.log("Display IP:", displayIP);
+// console.log("Display Location:", displayLocation);
+// console.log("Display Timezone:", displayTimezone);
+// console.log("Display ISP:", displayISP);
 
 // Leaflet Map Initialization - Quick Start //
 const map = L.map("map").setView([51.505, -0.09], 13);
@@ -30,9 +30,9 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 const marker = L.marker([51.5, -0.09]).addTo(map);
 
 // Console.log check - Leaflet initialization //
-console.log("=== LEAFLET MAP CHECKS ===");
-console.log("Map:", map);
-console.log("Marker:", marker);
+// console.log("=== LEAFLET MAP CHECKS ===");
+// console.log("Map:", map);
+// console.log("Marker:", marker);
 
 // UPDATE USER INTERFACE //
 function updateUI(data) {
@@ -50,12 +50,12 @@ function updateUI(data) {
   marker.setLatLng([lat, lng]);
 
   // Data Retreived by UI //
-  console.log("=== User Interface Data ===");
-  console.log("IP:", ip);
-  console.log("City:", city, "| Region:", region);
-  console.log("Lat:", lat, "| Lng:", lng);
-  console.log("Timezon:", timezone);
-  console.log("ISP:", isp);
+//   console.log("=== User Interface Data ===");
+//   console.log("IP:", ip);
+//   console.log("City:", city, "| Region:", region);
+//   console.log("Lat:", lat, "| Lng:", lng);
+//   console.log("Timezon:", timezone);
+//   console.log("ISP:", isp);
 }
 
 // FETCH API IP ADDRESS DATA //
@@ -63,14 +63,14 @@ async function fetchIPData(ipAddress = "") {
   const queryParam = ipAddress ? `?ipAddress=${ipAddress}` : "";
   const url = `${BASE_URL}${queryParam}`;
 
-  console.log("=== FETCH REQUEST ===");
-  console.log("URL:", url);
+//   console.log("=== FETCH REQUEST ===");
+//   console.log("URL:", url);
 
   try {
     const response = await fetch(url);
 
-    console.log("=== RESPONSE STATUS ===");
-    console.log("Status:", response.status, response.statusText);
+    // console.log("=== RESPONSE STATUS ===");
+    // console.log("Status:", response.status, response.statusText);
 
     if (!response.ok) {
       throw new Error(`API error: ${response.status} ${response.statusText}`);
@@ -78,7 +78,7 @@ async function fetchIPData(ipAddress = "") {
 
     const data = await response.json();
 
-    console.log("=== RENDER API RESPONSE ===");
+    // console.log("=== RENDER API RESPONSE ===");
 
     updateUI(data);
   } catch (error) {
@@ -97,8 +97,8 @@ searchForm.addEventListener("submit", function (event) {
     return;
   }
 
-  console.log("=== SEARCH SUBMISSION ===");
-  console.log("Query:", query);
+//   console.log("=== SEARCH SUBMISSION ===");
+//   console.log("Query:", query);
 
   fetchIPData(query);
 });
@@ -109,8 +109,8 @@ async function initApp() {
     const ipResponse = await fetch("https://api.ipify.org?format=json");
     const { ip } = await ipResponse.json();
 
-    console.log("=== USER IP ADDRESS DETECTED ===");
-    console.log("User IP:", ip);
+    // console.log("=== USER IP ADDRESS DETECTED ===");
+    // console.log("User IP:", ip);
 
     fetchIPData(ip);
   } catch (error) {
