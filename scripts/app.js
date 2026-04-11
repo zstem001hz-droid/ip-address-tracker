@@ -106,7 +106,7 @@ searchForm.addEventListener("submit", function (event) {
 // INITIAL PAGE LOAD & USER IP DETECTED //
 async function initApp() {
   try {
-    const ipResponse = await fetch("https://api.ipify.org?format=json");
+    const ipResponse = await fetch('https://api64.ipify.org?format=json');
     const { ip } = await ipResponse.json();
 
     // console.log("=== USER IP ADDRESS DETECTED ===");
