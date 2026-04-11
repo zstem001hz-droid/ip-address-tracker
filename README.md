@@ -18,8 +18,8 @@ states throughout.
 ## Table of contents
 
 - [The challenge](#the-challenge)
+- [Live Demo](#live-demo)
 - [Screenshot](#screenshot)
-- [Links](#links)
 - [My Process](#my-process)
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
@@ -38,13 +38,12 @@ Users should be able to:
 - See their own IP address on the map on the initial page load
 - Search for any IP addresses or domains and see the key information and location
 
+## Live Demo
+- **Live Demo:** [IP Address Tracker](https://zstem001hz-droid.github.io/ip-address-tracker/)
+
 ## Screenshot
-![Desktop Preview](./img/screenshot_desktop.png)
-![Mobile Preview](./img/screenshot_mobile.png)
-
-## Links
-
-- **Live Site URL:** [IP Address Tracker](https://zstem001hz-droid.github.io/ip-address-tracker/)
+<img src="./img/screenshot_mobile.png" width="300" alt="Mobile Preview" />
+<img src="./img/screenshot_desktop.png" width="600" alt="Desktop Preview" />
 
 ## My Process
 
@@ -88,10 +87,10 @@ Users should be able to:
 ### To run locally
 
 1. Clone the repository:
-\```bash
+```bash
 git clone https://github.com/zstem001hz-droid/ip-address-tracker.git
 cd ip-address-tracker
-\```
+```
 
 2. Open `index.html` with VS Code Live Server
 
@@ -102,27 +101,27 @@ No local backend setup required.
 ### To run your own backend proxy
 
 1. Clone the backend repository:
-\```bash
+```bash
 git clone https://github.com/zstem001hz-droid/ip-tracker-server.git
 cd ip-tracker-server
-\```
+```
 
 2. Install dependencies:
-\```bash
+```bash
 npm install
-\```
+```
 
 3. Create a `.env` file:
-\```
+```
 IPIFY_API_KEY=your_api_key_here
-\```
+```
 
 4. Get a free API key at [geo.ipify.org](https://geo.ipify.org)
 
 5. Start the server:
-\```bash
+```bash
 node server.js
-\```
+```
 
 6. Update `BASE_URL` in `scripts/app.js` to `http://localhost:3000/api/lookup`
 
