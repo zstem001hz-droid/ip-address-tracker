@@ -95,15 +95,15 @@ cd ip-address-tracker
 2. Open `index.html` with VS Code Live Server
 
 3. The app uses a hosted backend proxy at:
-`https://ip-tracker-server.onrender.com`
+`https://backend-server.onrender.com`
 No local backend setup required.
 
 ### To run your own backend proxy
 
 1. Clone the backend repository:
 ```bash
-git clone https://github.com/zstem001hz-droid/ip-tracker-server.git
-cd ip-tracker-server
+git clone https://github.com/zstem001hz-droid/backend-server.git
+cd backend-server
 ```
 
 2. Install dependencies:
