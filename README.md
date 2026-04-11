@@ -15,9 +15,9 @@ real time. The interface is fully responsive, adapting cleanly between
 mobile and desktop viewports, with accessible markup and visible focus
 states throughout.
 
-## Table of contents
+## Table of Contents
 
-- [The challenge](#the-challenge)
+- [The Challenge](#the-challenge)
 - [Live Demo](#live-demo)
 - [Screenshot](#screenshot)
 - [My Process](#my-process)
@@ -29,7 +29,7 @@ states throughout.
 - [Reflections](#reflections)
 
 
-## The challenge
+## The Challenge
 
 Users should be able to:
 
@@ -39,11 +39,11 @@ Users should be able to:
 - Search for any IP addresses or domains and see the key information and location
 
 ## Live Demo
-- **Live Demo:** [IP Address Tracker](https://zstem001hz-droid.github.io/ip-address-tracker/)
+🌎 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://zstem001hz-droid.github.io/ip-address-tracker/)
 
 ## Screenshot
-<img src="./img/screenshot_mobile.png" width="300" alt="Mobile Preview" />
 <img src="./img/screenshot_desktop.png" width="600" alt="Desktop Preview" />
+<img src="./img/screenshot_mobile.png" width="150" alt="Mobile Preview" />
 
 ## My Process
 
@@ -111,12 +111,12 @@ cd ip-tracker-server
 npm install
 ```
 
-3. Create a `.env` file:
+3. Get a free API key at [geo.ipify.org](https://geo.ipify.org)
+
+4. Create a `.env` file and place the key inside with:
 ```
 IPIFY_API_KEY=your_api_key_here
 ```
-
-4. Get a free API key at [geo.ipify.org](https://geo.ipify.org)
 
 5. Start the server:
 ```bash
