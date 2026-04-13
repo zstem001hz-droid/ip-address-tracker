@@ -130,6 +130,8 @@ button[type="submit"]:hover {
 #search-input:focus {
   outline: 2px solid hsl(0, 0%, 40%);
   outline-offset: -2px;
+  pointer-events: auto;
+  user-select: text;
 }
 
 /* @Media Responsive */

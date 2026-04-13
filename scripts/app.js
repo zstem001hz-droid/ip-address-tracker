@@ -1,5 +1,5 @@
 // TRACKER SERVER //
-const BASE_URL = "https://ip-tracker-server.onrender.com/api/lookup";
+const BASE_URL = "https://backend-server-lqxg.onrender.com/api/lookup";
 
 // DOM REFERENCES //
 const searchForm = document.getElementById("search-form");
@@ -50,21 +50,25 @@ function updateUI(data) {
   marker.setLatLng([lat, lng]);
 
   // Data Retreived by UI //
-//   console.log("=== User Interface Data ===");
-//   console.log("IP:", ip);
-//   console.log("City:", city, "| Region:", region);
-//   console.log("Lat:", lat, "| Lng:", lng);
-//   console.log("Timezon:", timezone);
-//   console.log("ISP:", isp);
+  //   console.log("=== User Interface Data ===");
+  //   console.log("IP:", ip);
+  //   console.log("City:", city, "| Region:", region);
+  //   console.log("Lat:", lat, "| Lng:", lng);
+  //   console.log("Timezon:", timezone);
+  //   console.log("ISP:", isp);
 }
 
 // FETCH API IP ADDRESS DATA //
-async function fetchIPData(ipAddress = "") {
-  const queryParam = ipAddress ? `?ipAddress=${ipAddress}` : "";
+async function fetchIPData(query = "", type = "ip") {
+  let queryParam = "";
+  if (query) {
+    queryParam = type === "domain" ? `?domain=${query}` : `?ipAddress=${query}`;
+  }
+
   const url = `${BASE_URL}${queryParam}`;
 
-//   console.log("=== FETCH REQUEST ===");
-//   console.log("URL:", url);
+  console.log("=== FETCH REQUEST ===");
+  console.log("URL:", url);
 
   try {
     const response = await fetch(url);
@@ -97,20 +101,28 @@ searchForm.addEventListener("submit", function (event) {
     return;
   }
 
-//   console.log("=== SEARCH SUBMISSION ===");
-//   console.log("Query:", query);
+  // Check input for IP address || domain
+  const isIP = /^(\d{1,3}\.){3}\d{1,3}$/.test(query);
 
-  fetchIPData(query);
+  //   console.log("=== SEARCH SUBMISSION ===");
+  //   console.log("Query:", query);
+
+  if (isIP) {
+    fetchIPData(query, "ip");
+  } else {
+    fetchIPData(query, "domain");
+  }
 });
 
 // INITIAL PAGE LOAD & USER IP DETECTED //
 async function initApp() {
   try {
-    const ipResponse = await fetch('https://api64.ipify.org?format=json');
+    const ipResponse = await fetch("https://api64.ipify.org?format=json");
     const { ip } = await ipResponse.json();
 
     // console.log("=== USER IP ADDRESS DETECTED ===");
     // console.log("User IP:", ip);
+    console.log("Detected IP:", ip);
 
     fetchIPData(ip);
   } catch (error) {
