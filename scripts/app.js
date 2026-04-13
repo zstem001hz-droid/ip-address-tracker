@@ -67,8 +67,8 @@ async function fetchIPData(query = "", type = "ip") {
 
   const url = `${BASE_URL}${queryParam}`;
 
-  console.log("=== FETCH REQUEST ===");
-  console.log("URL:", url);
+  // console.log("=== FETCH REQUEST ===");
+  // console.log("URL:", url);
 
   try {
     const response = await fetch(url);
